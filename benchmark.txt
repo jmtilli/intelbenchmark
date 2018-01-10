@@ -1,5 +1,159 @@
 This benchmark is on a Core i5-7200U running on VirtualBox with patched Win10.
 
+------------------ Patched kernel: ----------------------------
+
+Read: time ./read
+
+real: 46.073
+user: 20.870
+syst: 25.150
+
+Gtod: time ./gtod
+
+real: 2.773
+user: 2.743
+syst: 0.004
+
+workeronlyperf (f2baf66544082dd936e150f1c6f18a9273c7f540):
+
+MPPS: 8.43422, 8.38176, 8.34771, 8.38288, 8.3033, 8.41534, 8.41078, 8.34954
+- statistically significantly 1.53% faster (4.5683 stddev difference)
+
+nmsynproxy vale0:1 vale1:1 (f2baf66544082dd936e150f1c6f18a9273c7f540):
+w/ netmapsend
+
+MPPS: 2.35202, 2.43512, 2.39307, 2.33331, 2.38199, 2.40705, 2.35426, 2.4213
+- statistically significantly 13.3% slower (15.9 stddev difference)
+
+MSGS=4096$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m11.809s
+user	0m0.009s
+sys	0m0.153s
+
+real	0m11.852s
+user	0m0.008s
+sys	0m0.145s
+
+real	0m11.761s
+user	0m0.031s
+sys	0m0.147s
+
+real	0m11.751s
+user	0m0.010s
+sys	0m0.124s
+
+real	0m11.805s
+user	0m0.000s
+sys	0m0.138s
+
+real	0m11.836s
+user	0m0.008s
+sys	0m0.178s
+
+real	0m11.854s
+user	0m0.006s
+sys	0m0.168s
+
+real	0m11.882s
+user	0m0.045s
+sys	0m0.135s
+
+real	0m11.906s
+user	0m0.040s
+sys	0m0.181s
+
+real	0m11.873s
+user	0m0.034s
+sys	0m0.160s
+
+MSGS=8192$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m8.290s
+user	0m0.108s
+sys	0m0.911s
+
+real	0m8.206s
+user	0m0.060s
+sys	0m1.003s
+
+real	0m7.806s
+user	0m0.074s
+sys	0m0.843s
+
+real	0m8.374s
+user	0m0.111s
+sys	0m0.901s
+
+real	0m8.336s
+user	0m0.098s
+sys	0m0.948s
+
+real	0m8.367s
+user	0m0.074s
+sys	0m0.930s
+
+real	0m8.367s
+user	0m0.114s
+sys	0m0.987s
+
+real	0m8.281s
+user	0m0.113s
+sys	0m0.794s
+
+real	0m8.415s
+user	0m0.034s
+sys	0m1.059s
+
+real	0m8.251s
+user	0m0.090s
+sys	0m0.911s
+
+MSGS=16384$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m8.988s
+user	0m0.214s
+sys	0m2.322s
+
+real	0m8.756s
+user	0m0.118s
+sys	0m2.416s
+
+real	0m9.303s
+user	0m0.229s
+sys	0m2.409s
+
+real	0m8.784s
+user	0m0.159s
+sys	0m2.429s
+
+real	0m8.767s
+user	0m0.539s
+sys	0m2.155s
+
+real	0m8.941s
+user	0m0.294s
+sys	0m2.322s
+
+real	0m9.235s
+user	0m0.169s
+sys	0m2.474s
+
+real	0m9.036s
+user	0m0.160s
+sys	0m2.420s
+
+real	0m9.349s
+user	0m0.239s
+sys	0m2.384s
+
+real	0m8.680s
+user	0m0.098s
+sys	0m2.440s
+
+
+
+
 ------------------ Unpatched kernel: ----------------------------
 
 Read: time ./read
