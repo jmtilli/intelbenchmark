@@ -1,0 +1,151 @@
+This benchmark is on a Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz on HP DL360 G8
+
+------------------ Unpatched kernel: ----------------------------
+
+Read: time ./read
+real: 5.412, 5.363, 5.410, 5.400, 5.408, 5.396, 5.389, 5.395, 5.401, 5.419
+user: 2.219, 2.187, 2.002, 2.031, 2.095, 2.059, 2.092, 2.051, 2.167, 2.191
+syst: 3.191, 3.175, 3.405, 3.367, 3.311, 3.335, 3.296, 3.342, 3.232, 3.226
+
+Gtod: time ./gtod
+real: 2.263, 2.255, 2.262, 2.265, 2.263, 2.260, 2.258, 2.271, 2.266, 2.258
+user: 2.258, 2.254, 2.261, 2.264, 2.262, 2.259, 2.257, 2.269, 2.265, 2.257
+syst: 0.004, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000
+
+workeronlyperf (f2baf66544082dd936e150f1c6f18a9273c7f540):
+
+MPPS: 5.49508, 5.47027, 5.45398, 5.46905, 5.46781, 5.49489, 5.4954, 5.45782
+
+nmsynproxy vale0:1 vale1:1 (f2baf66544082dd936e150f1c6f18a9273c7f540):
+w/ netmapsend
+
+MPPS: 1.76842, 1.77253, 1.76809, 1.77167, 1.76768, 1.76687, 1.7702, 1.77082
+
+nmsynproxy vale0:1 vale1:1 (f2baf66544082dd936e150f1c6f18a9273c7f540):
+w/ ctrlperf
+
+MSGS=4096$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m11.306s
+user	0m0.000s
+sys	0m0.055s
+
+real	0m11.260s
+user	0m0.000s
+sys	0m0.049s
+
+real	0m11.252s
+user	0m0.000s
+sys	0m0.045s
+
+real	0m11.260s
+user	0m0.000s
+sys	0m0.045s
+
+real	0m11.244s
+user	0m0.008s
+sys	0m0.036s
+
+real	0m11.264s
+user	0m0.008s
+sys	0m0.038s
+
+real	0m11.256s
+user	0m0.000s
+sys	0m0.043s
+
+real	0m11.247s
+user	0m0.000s
+sys	0m0.043s
+
+real	0m11.280s
+user	0m0.000s
+sys	0m0.052s
+
+real	0m11.276s
+user	0m0.000s
+sys	0m0.049s
+
+MSGS=8192$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m5.714s
+user	0m0.000s
+sys	0m0.089s
+
+real	0m5.656s
+user	0m0.001s
+sys	0m0.065s
+
+real	0m5.652s
+user	0m0.000s
+sys	0m0.066s
+
+real	0m5.688s
+user	0m0.000s
+sys	0m0.077s
+
+real	0m5.668s
+user	0m0.000s
+sys	0m0.067s
+
+real	0m5.672s
+user	0m0.000s
+sys	0m0.066s
+
+real	0m5.664s
+user	0m0.000s
+sys	0m0.059s
+
+real	0m5.664s
+user	0m0.000s
+sys	0m0.064s
+
+real	0m5.668s
+user	0m0.000s
+sys	0m0.071s
+
+real	0m5.632s
+user	0m0.000s
+sys	0m0.056s
+
+MSGS=16384$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m4.058s
+user	0m0.013s
+sys	0m1.083s
+
+real	0m3.986s
+user	0m0.000s
+sys	0m1.028s
+
+real	0m4.034s
+user	0m0.000s
+sys	0m1.102s
+
+real	0m4.029s
+user	0m0.026s
+sys	0m1.036s
+
+real	0m3.957s
+user	0m0.009s
+sys	0m1.024s
+
+real	0m3.996s
+user	0m0.009s
+sys	0m1.030s
+
+real	0m3.957s
+user	0m0.005s
+sys	0m1.087s
+
+real	0m4.190s
+user	0m0.013s
+sys	0m1.171s
+
+real	0m3.950s
+user	0m0.005s
+sys	0m1.002s
+
+real	0m4.088s
+user	0m0.000s
+sys	0m1.014s
