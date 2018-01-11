@@ -1,5 +1,156 @@
 This benchmark is on a Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz on HP DL360 G8
 
+------------------ Patched kernel pti=off: ----------------------------
+
+Read: time ./read
+real: 5.579
+user: 2.180
+syst: 3.384
+
+Gtod: time ./gtod
+real: 2.393
+user: 2.392
+syst: 0.000
+
+workeronlyperf (f2baf66544082dd936e150f1c6f18a9273c7f540):
+
+MPPS: 5.56693, 5.54871, 5.5133, 5.53813, 5.5219, 5.48684, 5.54562, 5.53544
+
+nmsynproxy vale0:1 vale1:1 (f2baf66544082dd936e150f1c6f18a9273c7f540):
+w/ netmapsend
+
+MPPS: 1.7743, 1.77554, 1.77535, 1.77547, 1.77543, 1.77542, 1.77073, 1.77074
+
+nmsynproxy vale0:1 vale1:1 (f2baf66544082dd936e150f1c6f18a9273c7f540):
+w/ ctrlperf
+
+MSGS=4096$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m11.275s
+user	0m0.000s
+sys	0m0.053s
+
+real	0m11.244s
+user	0m0.000s
+sys	0m0.045s
+
+real	0m11.248s
+user	0m0.000s
+sys	0m0.050s
+
+real	0m11.248s
+user	0m0.000s
+sys	0m0.049s
+
+real	0m11.252s
+user	0m0.017s
+sys	0m0.033s
+
+real	0m11.249s
+user	0m0.001s
+sys	0m0.049s
+
+real	0m11.252s
+user	0m0.000s
+sys	0m0.051s
+
+real	0m11.248s
+user	0m0.000s
+sys	0m0.049s
+
+real	0m11.252s
+user	0m0.000s
+sys	0m0.051s
+
+real	0m11.248s
+user	0m0.000s
+sys	0m0.049s
+
+
+MSGS=8192$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m5.668s
+user	0m0.000s
+sys	0m0.071s
+
+real	0m5.656s
+user	0m0.005s
+sys	0m0.074s
+
+real	0m5.635s
+user	0m0.006s
+sys	0m0.054s
+
+real	0m5.652s
+user	0m0.000s
+sys	0m0.072s
+
+real	0m5.648s
+user	0m0.000s
+sys	0m0.072s
+
+real	0m5.648s
+user	0m0.000s
+sys	0m0.068s
+
+real	0m5.656s
+user	0m0.000s
+sys	0m0.074s
+
+real	0m5.648s
+user	0m0.000s
+sys	0m0.071s
+
+real	0m5.644s
+user	0m0.005s
+sys	0m0.065s
+
+real	0m5.648s
+user	0m0.000s
+sys	0m0.071s
+
+MSGS=16384$ for a in `seq 10`; do time ./ctrlperf ; done
+
+real	0m4.377s
+user	0m0.009s
+sys	0m1.466s
+
+real	0m4.549s
+user	0m0.009s
+sys	0m1.644s
+
+real	0m4.583s
+user	0m0.017s
+sys	0m1.741s
+
+real	0m4.421s
+user	0m0.013s
+sys	0m1.366s
+
+real	0m4.428s
+user	0m0.005s
+sys	0m1.396s
+
+real	0m4.499s
+user	0m0.013s
+sys	0m1.656s
+
+real	0m4.552s
+user	0m0.021s
+sys	0m1.671s
+
+real	0m4.522s
+user	0m0.013s
+sys	0m1.644s
+
+real	0m4.412s
+user	0m0.013s
+sys	0m1.487s
+
+real	0m4.155s
+user	0m0.013s
+sys	0m1.302s
+
 ------------------ Patched kernel: ----------------------------
 
 Read: time ./read
